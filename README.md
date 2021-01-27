@@ -37,8 +37,10 @@ The `Test: Update Workspace launch configurations` command should:
 - replace existed Workspace-scoped launch configurations by test launch config if there is at least one configuration defined in workspace config file
 
 The new test configuration should be available for running from `Debug` panel.
+
 `Note:` it's expected that multi-root workspace from a config file is open for testing
 
 ## 'vscode.workspace.workspaceFile'
 The `Test 'vscode.workspace.workspaceFile'` command should just display a notification with info about path to current workspace config file (like: `/some/path/testVsCodeWorkspace.code-workspace`). It works well for `VS Code`. But for `Theia` - it's `undefined`.
+
 `Note:` it's expected that multi-root workspace from a config file is open for testing

@@ -28,8 +28,10 @@ Please use `Create file-copy` before `Test 'vscode.diff' command` execution to h
 
 The `Test 'vscode.Uri.joinPath'` command should just display a notification with info about path to `package.json` file. It works well for `VS Code`. But it doesn't work for `Theia` - you can see an exteption in browser console.
 
-It's expected that multi-root workspace from config file is open for testing the following command:
+It's expected that multi-root workspace from config file is open for testing the following commands:
+
 The `Test: Update Workspace launch configurations` command should: 
 - add new test Workspace-scoped launch configuration to workspace config file if there is no configurations defined
 - replace existed Workspace-scoped launch configurations by test launch config if there is at least one configuration defined in workspace config file
+
 The new test configuration should be available for running from `Debug` panel.

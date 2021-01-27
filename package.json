@@ -39,6 +39,10 @@
       {
         "command": "test-update-workspace-launch-configs",
         "title": "Test: Update Workspace launch configurations"
+      },
+      {
+        "command": "test-workspace-file",
+        "title": "Test 'vscode.workspace.workspaceFile'"
       }
     ]
   },

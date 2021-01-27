@@ -106,6 +106,15 @@ export function testUriJoinPath() {
   vscode.window.showInformationMessage("The path is: " + fileUri.toString());
 }
 
+export function testWorkspaceFileAPI() {
+  const workspaceFile = vscode.workspace.workspaceFile;
+
+  console.dir(workspaceFile);
+
+  const workspaceFilePath = workspaceFile ? workspaceFile.path : undefined;
+  vscode.window.showInformationMessage(`The path is: ${workspaceFilePath}`);
+}
+
 function getWorkspaceFolder(): vscode.WorkspaceFolder {
   const workspaceFolders = vscode.workspace.workspaceFolders;
   if (!workspaceFolders || workspaceFolders.length < 1) {

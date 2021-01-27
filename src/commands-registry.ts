@@ -4,6 +4,7 @@ import {
   testUriJoinPath,
   testVsCodeDiffCommand,
   testVsCodeOpenCommand,
+  testWorkspaceFileAPI,
 } from "./commands";
 import { updateWorkspaceLaunchConfigs } from "./workspace-api";
 
@@ -13,6 +14,7 @@ namespace TestCommands {
   export const UPDATE_LAUNCH_CONFIGS = "test-update-workspace-launch-configs";
   export const CREATE_COPY_FILE = "create-copy-file-for-diff-testing";
   export const URI_JOIN_PATH = "test-uri-join-path";
+  export const WORKSPACE_FILE = "test-workspace-file";
 }
 
 export function registerVsCodeOpenCommand(context: vscode.ExtensionContext) {
@@ -55,6 +57,14 @@ export function registerUpdateLaunchConfigsCommand(
   const disposable = vscode.commands.registerCommand(
     TestCommands.UPDATE_LAUNCH_CONFIGS,
     updateWorkspaceLaunchConfigs
+  );
+  context.subscriptions.push(disposable);
+}
+
+export function registerWorkspaceFileCommand(context: vscode.ExtensionContext) {
+  const disposable = vscode.commands.registerCommand(
+    TestCommands.WORKSPACE_FILE,
+    testWorkspaceFileAPI
   );
   context.subscriptions.push(disposable);
 }

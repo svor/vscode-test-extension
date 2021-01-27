@@ -13,10 +13,11 @@ The extension contains the following commands:
 - `Test 'vscode.diff' command`
 - `Test 'vscode.Uri.joinPath'`
 - `Create file-copy`
+- `Test update Workspace launch configurations`
 
 The commands are availeble for running from Command Palette (F1). 
 
-It's expected that `Theia` project is open as a workspace folder for testing.
+It's expected that `Theia` project is open as a workspace folder for testing the following commands:
 
 `Test 'vscode.open' command` uses `vscode.open` command which opens `package.json` file and selects `engines` section.
 
@@ -26,3 +27,9 @@ Please use `Create file-copy` before `Test 'vscode.diff' command` execution to h
 - `Test 'vscode.diff' command` uses `vscode.diff` which opens the provided resources in the diff editor to compare their contents. `engines` section should be selected for the right editor.
 
 The `Test 'vscode.Uri.joinPath'` command should just display a notification with info about path to `package.json` file. It works well for `VS Code`. But it doesn't work for `Theia` - you can see an exteption in browser console.
+
+It's expected that multi-root workspace from config file is open for testing the following command:
+The `Test: Update Workspace launch configurations` command should: 
+- add new test Workspace-scoped launch configuration to workspace config file if there is no configurations defined
+- replace existed Workspace-scoped launch configurations by test launch config if there is at least one configuration defined in workspace config file
+The new test configuration should be available for running from `Debug` panel.

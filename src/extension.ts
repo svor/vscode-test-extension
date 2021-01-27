@@ -1,6 +1,8 @@
-import * as vscode from 'vscode';
-import { posix } from 'path';
 import * as fs from 'fs';
+import { posix } from 'path';
+import * as vscode from 'vscode';
+import { registerUpdateLaunchConfigsCommand } from './commands-registry';
+
 
 const defaultFile = 'package.json';
 const copyFile = 'package_copy.json';
@@ -10,6 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
     registerCreateCopyFileCommand(context);
     registerVsCodeDiffCommand(context);
     registerUriJoinPathCommand(context);
+    registerUpdateLaunchConfigsCommand(context);
 }
 
 function registerVsCodeOpenCommand(context: vscode.ExtensionContext) {
@@ -110,5 +113,4 @@ function getWorkspaceFolder(): vscode.WorkspaceFolder {
     return workspaceFolders[0];
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() { }
